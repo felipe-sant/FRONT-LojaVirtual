@@ -3,7 +3,7 @@ import NavbarSimpleProps from "../types/NavbarSimpleProps"
 import arrow_back from "../images/arrow_back.svg"
 
 export default function NavbarSimple(props: NavbarSimpleProps) {
-    const { link, titulo } = props
+    const { link } = props
 
     function redirect() {
         window.location.href = link

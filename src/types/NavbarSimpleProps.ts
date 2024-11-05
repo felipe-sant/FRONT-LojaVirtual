@@ -1,6 +1,6 @@
 type NavbarSimpleProps = {
     link: string,
-    titulo?: string
+    title?: string
 }
 
 export default NavbarSimpleProps
