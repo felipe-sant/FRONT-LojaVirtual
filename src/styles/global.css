@@ -2,6 +2,11 @@
 
 :root {
     --roboto-font: 'Roboto', sans-serif;
+    --p_black: #020202;
+    --p_yellow: #F6AE2D;
+    --p_white: #EEF0F2;
+    --p_gray: #A2999E;
+    --p_brown: #846A6A;
 }
 
 * {

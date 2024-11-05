@@ -1,9 +1,12 @@
+import NavbarSimple from "../components/navbarSimple"
+
 function Home() {
-    return (
+    return (<>
+        <NavbarSimple link="/çlkdsaçlkdçlk" />
         <main>
-            <h1>Hello world</h1>
+            
         </main>
-    )
+    </>)
 }
 
 export default Home
