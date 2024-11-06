@@ -4,6 +4,11 @@ import NavbarMobile from "../components/navbarMobile"
 import LinkType from "../types/LinkType"
 import css from "../styles/home.module.css"
 import loading from "../images/loading.svg"
+import wifiOff from "../images/wifi-off.svg"
+import sadFace from "../images/sad-face.svg"
+import ProdutoClass from "../models/ProdutoClass"
+import get from "../functions/get"
+import TestButton from "../components/testButton"
 
 function Home() {
     const [isMobile, setIsMobile] = useState(true)
@@ -11,12 +16,33 @@ function Home() {
     const [emoji, setEmoji] = useState(loading)
     const [mensagem, setMensagem] = useState("Carregando Produtos...")
     const [isLoading, setIsLoading] = useState(true)
+    const [produtos, setProdutos] = useState<ProdutoClass[]>([])
 
     const links: LinkType[] = [
         { url: "/produto/cadastro", text: "Cadastrar Produtos" },
         { url: "/", text: "Comprar Produtos" },
         { url: "/compras", text: "Histórico de Compras" }
     ]
+
+    const buscarProdutos = async () => {
+        try {
+            const data: {}[] = await get("http://localhost:3001/produtos")
+            console.log(data)
+            if (data.length === 0) {
+                setEmoji(sadFace)
+                setMensagem("Nenhum produto encontrado.")
+                return
+            }
+            setErroProdutos(false)
+        } catch (error) {
+            console.log(error)
+            setErroProdutos(true)
+            setEmoji(wifiOff)
+            setMensagem("Erro ao carregar produtos.")
+        } finally {
+            setIsLoading(false)
+        }
+    }
 
     useEffect(() => {
         function handleSize(): void { setIsMobile(window.innerWidth < 900) }
@@ -54,6 +80,7 @@ function Home() {
                     </section>
                 )}
             </main>
+            <TestButton test={buscarProdutos} />
         </>
     )
 }
