@@ -1,0 +1,89 @@
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.main {
+    padding: 55px;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.pesquisa {
+    height: 40px;
+    width: 100%;
+    display: flex;
+}
+
+.pesquisa input {
+    width: 100%;
+    height: 40px;
+    background-color: var(--p_white);
+    border: 1px solid var(--p_gray);
+    border-radius: 5px;
+    font-family: var(--font-inter);
+    font-weight: 500;
+    font-size: 13px;
+    padding: 0 10px;
+}
+
+.pesquisa input::placeholder {
+    color: var(--p_gray);
+}
+
+.produtos {
+    width: 100%;
+    min-height: 300px;
+    max-height: auto;
+}
+
+.erroProdutos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.erroProdutos p {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--p_gray);
+}
+
+.rotate {
+    width: 64px;
+}
+
+.rotate {
+    animation: rotate 3s linear infinite;
+}
+
+@media (min-width: 900px) {
+    .main {
+        margin: auto;
+        padding: 120px 0;
+        max-width: 700px;
+        min-width: none;
+    }
+
+    .pesquisa {
+        height: 50px;
+    }
+
+    .pesquisa input {
+        font-size: 14px;
+        height: 50px;
+    }
+
+    .produtos {
+        min-height: 450px;
+    }
+}

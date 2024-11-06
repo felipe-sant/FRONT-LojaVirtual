@@ -23,7 +23,7 @@ export default function NavbarMobile(props: NavbarProps) {
                         <img src={gato} alt="logo" />
                     </div>
                     <div className={css.navbar}>
-                        <div className={css.shopping_cart} onClick={() => setShoppingCart_Alert(!shoppingCart_Alert)}>
+                        <div className={css.shopping_cart} onClick={() => redirect("/carrinho")}>
                             {shoppingCart_Alert ? <img src={shopping_cart_alert} alt="shopping_cart" /> : <img src={shopping_cart} alt="shopping_cart" />}
                         </div>
                         <div className={openHamburguer ? css.hamb + " " + css.open : css.hamb + " " + css.close} onClick={() => { setOpenHamburguer(!openHamburguer) }}>

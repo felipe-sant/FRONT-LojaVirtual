@@ -37,7 +37,7 @@ export default function Navbar(props: NavbarProps) {
                             }
                         })}
                     </nav>
-                    <div className={css.shopping_cart} onClick={() => setShoppingCart_Alert(!shoppingCart_Alert)}>
+                    <div className={css.shopping_cart} onClick={() => redirect("/carrinho")}>
                         {shoppingCart_Alert ? <img src={shopping_cart_alert} alt="shopping_cart" /> : <img src={shopping_cart} alt="shopping_cart" />}
                     </div>
                 </div>
