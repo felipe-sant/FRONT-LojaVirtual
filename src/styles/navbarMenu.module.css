@@ -1,0 +1,69 @@
+.background {
+    background-color: rgba(2, 2, 2, 0.4);
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.nav {
+    background-color: var(--p_white);
+    border: 2px solid var(--p_gray);
+    border-top: none;
+    border-right: none;
+    width: 262px;
+    position: absolute;
+    padding: 0px 30px 40px 30px;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 20px;
+}
+
+.header {
+    height: 70px;
+}
+
+.nav hr {
+    border: 2px solid var(--p_yellow);
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.nav ul li {
+    padding: 0 15px;
+    height: 20px;
+}
+
+.nav ul li p {
+    text-decoration: none;
+    color: var(--p_black);
+    font-family: var(--font-inter);
+    font-size: 12pt;   
+    cursor: pointer;    
+}	
+
+.mark {
+    position: relative;
+}
+
+.mark p {
+    font-weight: bold;
+}
+
+.line {
+    position: absolute;
+    background-color: var(--p_black);
+    width: 3px;
+    height: 18px;
+    border-radius: 8px;
+    top: 0;
+    left: 0;
+}

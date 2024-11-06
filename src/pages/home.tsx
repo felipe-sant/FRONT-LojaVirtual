@@ -4,7 +4,7 @@ import NavbarMobile from "../components/navbarMobile"
 import LinkType from "../types/LinkType"
 
 function Home() {
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(true)
 
     const links: LinkType[] = [
         { url: "/produto/cadastro", text: "Cadastrar Produtos" },
@@ -26,6 +26,7 @@ function Home() {
             ) : (
                 <Navbar location="/" links={links} />
             )}
+            <main></main>
         </>
     )
 }
