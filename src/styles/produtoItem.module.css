@@ -1,0 +1,56 @@
+.produto {
+    height: 225px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.imagem {
+    border-radius: 5px;
+    height: 130px;
+    width: 130px;
+}
+
+.imagem img {
+    border-radius: 5px;
+    height: 130px;
+    width: 130px;
+}
+
+.texto {
+    padding: 15px 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto h3 {
+    font-size: 13px;
+    color: var(--p_preto);
+    font-weight: bold;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.texto .preco {
+    font-size: 13px;
+    color: var(--p_preto);
+    font-weight: normal;
+}
+
+.texto .desc {
+    font-size: 10px;
+    color: var(--p_brown);
+    font-weight: 400;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.linha {
+    margin-top: 10px;
+    background-color: var(--p_white);
+    height: 1px;
+    width: 100%;
+}

@@ -16,7 +16,7 @@ export default class ProdutoClass {
         this.preco = json.preco;
         this.frete = json.frete;
         this.quantidade = json.quantidade;
-        this.imagem = "https://via.placeholder.com/130";
+        this.imagem = "https://picsum.photos/130";
         this.descricao = json.descricao;
         this.estoque = json.estoque;
     }

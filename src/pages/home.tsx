@@ -9,6 +9,8 @@ import sadFace from "../images/sad-face.svg"
 import ProdutoClass from "../models/ProdutoClass"
 import get from "../functions/get"
 import TestButton from "../components/testButton"
+import ProdutoItem from "../components/produtoItem"
+import ProdutoType from "../types/ProdutoType"
 
 function Home() {
     const [isMobile, setIsMobile] = useState(true)
@@ -18,6 +20,49 @@ function Home() {
     const [isLoading, setIsLoading] = useState(true)
     const [produtos, setProdutos] = useState<ProdutoClass[]>([])
 
+    const newProd: ProdutoType[] = [
+        {
+            "_id": "1",
+            "nome": "Smartphone XYZ",
+            "preco": "2999.99",
+            "frete": 15.50,
+            "quantidade": 50,
+            "imagem": "https://example.com/images/smartphone_xyz.jpg",
+            "descricao": "Um smartphone moderno com excelente câmera e bateria de longa duração.",
+            "estoque": 1
+        },
+        {
+            "_id": "2",
+            "nome": "Notebook ABC",
+            "preco": "5499.99",
+            "frete": 0,
+            "quantidade": 30,
+            "imagem": "https://example.com/images/notebook_abc.jpg",
+            "descricao": "Notebook de alta performance, ideal para trabalho e estudos.",
+            "estoque": 0
+        },
+        {
+            "_id": "3",
+            "nome": "Fone de Ouvido Wireless",
+            "preco": "399.99",
+            "frete": null,
+            "quantidade": 100,
+            "imagem": "https://example.com/images/fone_ouvido_wireless.jpg",
+            "descricao": "Fone de ouvido sem fio com cancelamento de ruído e som de alta qualidade.",
+            "estoque": 24
+        },
+        {
+            "_id": "4",
+            "nome": "Fone de Ouvido Wireless",
+            "preco": "399.99",
+            "frete": null,
+            "quantidade": 100,
+            "imagem": "https://example.com/images/fone_ouvido_wireless.jpg",
+            "descricao": "Fone de ouvido sem fio com cancelamento de ruído e som de alta qualidade.",
+            "estoque": 24
+        }
+    ]
+
     const links: LinkType[] = [
         { url: "/produto/cadastro", text: "Cadastrar Produtos" },
         { url: "/", text: "Comprar Produtos" },
@@ -26,13 +71,14 @@ function Home() {
 
     const buscarProdutos = async () => {
         try {
-            const data: {}[] = await get("http://localhost:3001/produtos")
-            console.log(data)
-            if (data.length === 0) {
-                setEmoji(sadFace)
-                setMensagem("Nenhum produto encontrado.")
-                return
-            }
+            // const data: ProdutoType[] = await get("http://localhost:3001/produtos")
+            // if (data.length === 0) {
+            //     setEmoji(sadFace)
+            //     setMensagem("Nenhum produto encontrado.")
+            //     return
+            // }
+            const newProdutos: ProdutoClass[] = newProd.map((produto: ProdutoType) => new ProdutoClass(produto))
+            setProdutos(newProdutos)
             setErroProdutos(false)
         } catch (error) {
             console.log(error)
@@ -45,6 +91,7 @@ function Home() {
     }
 
     useEffect(() => {
+        buscarProdutos()
         function handleSize(): void { setIsMobile(window.innerWidth < 900) }
         handleSize()
         window.addEventListener("resize", handleSize)
@@ -75,12 +122,13 @@ function Home() {
                         <p>{mensagem}</p>
                     </section>
                 ) : (
-                    <section className={css.produtos}>
-
+                    <section className={css.produtos + " " + css.comProdutos}>
+                        {produtos.map((produto, index) => (
+                            <ProdutoItem key={index} produto={produto} />
+                        ))}
                     </section>
                 )}
             </main>
-            <TestButton test={buscarProdutos} />
         </>
     )
 }

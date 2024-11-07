@@ -1,4 +1,4 @@
-import NavbarMenuProps from "../types/navbarMenuProps";
+import NavbarMenuProps from "../types/NavbarMenuProps";
 import css from "../styles/navbarMenu.module.css"
 import redirect from "../utils/redirect";
 
