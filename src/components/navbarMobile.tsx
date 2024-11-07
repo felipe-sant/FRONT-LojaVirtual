@@ -1,4 +1,3 @@
-import NavbarProps from "../types/NavbarProps";
 import css from "../styles/navbarMobile.module.css"
 import LinkType from "../types/LinkType";
 import { useEffect, useState } from "react";
@@ -7,6 +6,7 @@ import shopping_cart_alert from "../images/shopping-cart_alert_white.svg"
 import shopping_cart from "../images/shopping-cart.svg"
 import redirect from "../utils/redirect";
 import NavbarMenu from "./navbarMenu";
+import NavbarProps from "../types/NavbarProps";
 
 export default function NavbarMobile(props: NavbarProps) {
     const [shoppingCart_Alert, setShoppingCart_Alert] = useState(false)

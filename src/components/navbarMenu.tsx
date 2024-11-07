@@ -1,5 +1,5 @@
-import NavbarMenuProps from "../types/NavbarMenuProps";
 import css from "../styles/navbarMenu.module.css"
+import NavbarMenuProps from "../types/NavbarMenuProps";
 import redirect from "../utils/redirect";
 
 export default function NavbarMenu(props: NavbarMenuProps) {
