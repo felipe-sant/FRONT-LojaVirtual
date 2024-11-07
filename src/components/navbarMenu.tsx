@@ -1,8 +1,8 @@
 import css from "../styles/navbarMenu.module.css"
-import NavbarMenuProps from "../types/NavbarMenuProps";
 import redirect from "../utils/redirect";
+import NavMenuProps from "../types/NavbarMenuProps";
 
-export default function NavbarMenu(props: NavbarMenuProps) {
+export default function NavbarMenu(props: NavMenuProps) {
     const { isOpen, setIsOpen, links, location } = props
 
     if (!isOpen) return null
